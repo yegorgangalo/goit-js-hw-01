@@ -1,14 +1,39 @@
-const ADMIN_PASSWORD = 'jqueryismyjam';
-let message = prompt("Введите пароль администратора");
+const inputRef = document.querySelector(".task3__input");
+const buttonEnterRef = document.querySelector(".task3__btn-enter");
+const buttonExitRef = document.querySelector(".task3__btn-exit");
 
-if (message === null) {
-    message = 'Отменено пользователем!';
-}
-else if (message === 'jqueryismyjam') {
-    message = 'Добро пожаловать!';
-}
-else {
-    message = 'Доступ запрещен, неверный пароль!';
-};
+buttonExitRef.addEventListener("click", () => {
+    console.log('Отменено пользователем!');
+});
 
-alert(message);
+buttonEnterRef.addEventListener("click", () => {
+    const ADMIN_PASSWORD = 'jqueryismyjam';
+    let message = inputRef.value;
+
+    if (message === 'jqueryismyjam') {
+        message = 'Добро пожаловать!';
+    }
+    else {
+        message = 'Доступ запрещен, неверный пароль!';
+    };
+
+    console.log(message);
+});
+
+
+
+
+// const ADMIN_PASSWORD = 'jqueryismyjam';
+// let message = prompt("Введите пароль администратора");
+
+// if (message === null) {
+//     message = 'Отменено пользователем!';
+// }
+// else if (message === 'jqueryismyjam') {
+//     message = 'Добро пожаловать!';
+// }
+// else {
+//     message = 'Доступ запрещен, неверный пароль!';
+// };
+
+// alert(message);

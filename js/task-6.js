@@ -1,3 +1,25 @@
+const inputRef = document.querySelector(".task6__input");
+const buttonSendRef = document.querySelector(".task6__btn-send");
+const buttonExitRef = document.querySelector(".task6__btn-exit");
+let total = 0;
+
+buttonSendRef.addEventListener("click", () => {
+    let input = inputRef.value;
+    input = Number(input);
+    total += input;
+    console.log(total);
+    inputRef.value = "";
+    inputRef.focus();
+});
+
+buttonExitRef.addEventListener("click", () => {
+    alert(`Общая сумма чисел равна ${total}`);
+    total = 0;
+});
+
+
+
+
 /* просто цикл while*/
 // let total = 0;
 
@@ -26,25 +48,25 @@
 
 
 /* цикл do while*/
-let total = 0;
+// let total = 0;
 
-do {
-    let input = prompt("Введите число");
+// do {
+//     let input = prompt("Введите число");
 
-    if (input === null) {
-        break;
-    }
+//     if (input === null) {
+//         break;
+//     }
 
-    input = Number(input);
-    if (Number.isNaN(input)) {
-        alert("Было введено не число, попробуйте еще раз");
-    }
-    else {
-        total += input;
-    }
-} while (true);
+//     input = Number(input);
+//     if (Number.isNaN(input)) {
+//         alert("Было введено не число, попробуйте еще раз");
+//     }
+//     else {
+//         total += input;
+//     }
+// } while (true);
 
-alert(`Общая сумма чисел равна ${total}`);
+// alert(`Общая сумма чисел равна ${total}`);
 
 
 
