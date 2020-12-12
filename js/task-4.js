@@ -9,24 +9,19 @@ buttonExitRef.addEventListener("click", () => {
 buttonSendRef.addEventListener("click", () => {
     const credits = 23580;
     const pricePerDroid = 3000;
-    let message;
-    let quantity = inputRef.value;
-    quantity = Number(quantity);
-    if (quantity > 0) {
-        let totalPrice = pricePerDroid * quantity;
-        if (totalPrice > credits) {
-            message = 'Недостаточно средств на счету!';
-        }
-        else {
-            const balance = credits - totalPrice;
-            message = `Вы купили ${quantity} дроидов, на счету осталось ${balance} кредитов.`;
-        }
+    const quantityStr = inputRef.value;
+    const quantity = Number(quantityStr);
+    const totalPrice = pricePerDroid * quantity;
+    if (totalPrice <= 0) {
+        console.log("Введите количество от 1");
+        return;
     }
-    else {
-        message = "Введите количество от 1";
+    if (totalPrice > credits) {
+        console.log('Недостаточно средств на счету!');
+        return;
     }
-
-    console.log(message);
+    const balance = credits - totalPrice;
+    console.log(`Вы купили ${quantity} дроидов, на счету осталось ${balance} кредитов.`);
 });
 
 

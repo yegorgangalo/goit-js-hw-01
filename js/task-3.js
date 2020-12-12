@@ -10,12 +10,16 @@ buttonEnterRef.addEventListener("click", () => {
     const ADMIN_PASSWORD = 'jqueryismyjam';
     let message = inputRef.value;
 
-    if (message === 'jqueryismyjam') {
-        message = 'Добро пожаловать!';
-    }
-    else {
-        message = 'Доступ запрещен, неверный пароль!';
-    };
+    // if (message === ADMIN_PASSWORD) {
+    //     message = 'Добро пожаловать!';
+    // }
+    // else {
+    //     message = 'Доступ запрещен, неверный пароль!';
+    // };
+
+    message = message === ADMIN_PASSWORD
+        ? 'Добро пожаловать!'
+        : 'Доступ запрещен, неверный пароль!';
 
     console.log(message);
 });
